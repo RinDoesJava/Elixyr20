@@ -130,7 +130,7 @@ public final class CommandMap {
     public void commandConsole(String command){
         Object[] object = getCommand(command);
         if(object[0] == null || ((SimpleCommand)object[0]).getExecutorType() == ExecutorType.USER){
-            System.out.println("Command not recognized.");
+            System.out.println("Command not recognized, please try again.");
             return;
         }
         try{
