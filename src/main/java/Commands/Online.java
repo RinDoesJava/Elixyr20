@@ -1,9 +1,12 @@
 package Commands;
 
 import ElixyrMain.Info;
+import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.OnlineStatus;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
+
+import java.awt.*;
 
 public class Online extends ListenerAdapter {
 
@@ -19,7 +22,13 @@ public class Online extends ListenerAdapter {
                     online++;
                 }
             }
-            event.getChannel().sendMessage("There are " + online + " users online, and there are " + event.getGuild().getMembers().size() + " Members in this server total").queue();
+
+            EmbedBuilder builder = new EmbedBuilder();
+            builder.setTitle("User list");
+            builder.setColor(Color.cyan);
+            builder.addField("People who are online", String.valueOf(online), false);
+            builder.addField("Total user count", String.valueOf(event.getGuild().getMembers().size()), false);
+            event.getChannel().sendMessage(builder.build()).queue();
 
 
         }
