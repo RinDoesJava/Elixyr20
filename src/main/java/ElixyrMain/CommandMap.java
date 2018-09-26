@@ -136,7 +136,7 @@ public final class CommandMap {
         try{
             execute(((SimpleCommand)object[0]), command, (String[])object[1], null);
         }catch(Exception exception){
-            System.out.println("Method "+((SimpleCommand)object[0]).getMethod().getName()+" isn't correctly initialised: " + exception.getCause());
+            System.out.println("Method "+((SimpleCommand)object[0]).getMethod().getName()+" isn't correctly initialised. Reason: " + exception.getCause());
         }
     }
 
@@ -149,7 +149,7 @@ public final class CommandMap {
         try{
             execute(((SimpleCommand)object[0]), command,(String[])object[1], message);
         }catch(Exception exception){
-            System.out.println("Method "+((SimpleCommand)object[0]).getMethod().getName()+" isn't correctly initialised: " + exception.getCause());
+            System.out.println("Method "+((SimpleCommand)object[0]).getMethod().getName()+" isn't correctly initialised. Reason: " + exception.getCause());
         }
         return true;
     }
