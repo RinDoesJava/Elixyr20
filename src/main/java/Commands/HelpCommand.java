@@ -26,7 +26,7 @@ public class HelpCommand {
         EmbedBuilder builder = new EmbedBuilder();
         builder.setTitle("List of Music Commands");
         builder.setColor(Color.CYAN);
-        builder.setFooter("Powered by Lavaplayer", "https://cdn.discordapp.com/avatars/487288677677006848/fcb580e0e5305d9bdea37122773fbcbb.png?size=2048");
+        builder.setFooter("made using lavaplayer!", "https://cdn.discordapp.com/avatars/487288677677006848/fcb580e0e5305d9bdea37122773fbcbb.png?size=2048");
 
         for (SimpleCommand command : commandMap.getCommands()) {
             if (command.getExecutorType() == ExecutorType.CONSOLE) continue;
