@@ -11,3 +11,4 @@ He also plays music!
 
 # Prefix
 Elixyr's prefix is ely;
+do ely;help to see what he can do so far!
