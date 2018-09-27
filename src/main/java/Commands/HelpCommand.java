@@ -1,7 +1,5 @@
 package Commands;
 
-import java.awt.Color;
-
 import ElixyrMain.Command;
 import ElixyrMain.Command.ExecutorType;
 import ElixyrMain.CommandMap;
@@ -9,6 +7,8 @@ import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.entities.Guild;
 import net.dv8tion.jda.core.entities.MessageChannel;
 import net.dv8tion.jda.core.entities.User;
+
+import java.awt.*;
 
 public class HelpCommand {
 
@@ -24,7 +24,7 @@ public class HelpCommand {
     private void musichelp(User user, MessageChannel channel, Guild guild) {
 
         EmbedBuilder builder = new EmbedBuilder();
-        builder.setTitle("List of Music Commands!");
+        builder.setTitle("List of Music Commands:");
         builder.setColor(Color.CYAN);
         builder.setFooter("made using lavaplayer by sedmelluq!", "https://cdn.discordapp.com/avatars/487288677677006848/fcb580e0e5305d9bdea37122773fbcbb.png?size=2048");
 
