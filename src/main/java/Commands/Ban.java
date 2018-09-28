@@ -3,9 +3,7 @@ package Commands;
 import ElixyrMain.Info;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.Permission;
-import net.dv8tion.jda.core.entities.Guild;
 import net.dv8tion.jda.core.entities.Member;
-import net.dv8tion.jda.core.entities.Role;
 import net.dv8tion.jda.core.entities.TextChannel;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
@@ -35,10 +33,10 @@ public class Ban extends ListenerAdapter {
                             reason += args[i] + " ";
                         }
                         log(target, event.getMember(), reason, event.getChannel());
-                        controller.ban(target, 9999, reason).queue();
+                        controller.ban(target, 0, reason).queue();
                     } else {
                         log(target, event.getMember(), "", event.getChannel());
-                        controller.ban(target, 9999, "").queue();
+                        controller.ban(target, 0, "").queue();
                     }
                 }
             }
