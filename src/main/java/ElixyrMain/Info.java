@@ -8,6 +8,6 @@ public class Info {
 
     public static String PREFIX = "ely;";
 
-    public static String APIKEY = "AIzaSyDiMW7B6ANsGPdHluASNZlUBlpHtnco8ow";
+    public static String APIKEY = "No kek";
 }
 
