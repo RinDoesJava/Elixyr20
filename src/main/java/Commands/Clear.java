@@ -25,7 +25,7 @@ public class Clear extends ListenerAdapter {
             if (args[0].equalsIgnoreCase(Info.PREFIX + "purge")) {
 
         if ( event.getMember().hasPermission(Permission.ADMINISTRATOR) || ( event.getMember().hasPermission(Permission.MESSAGE_MANAGE))) {
-                if (args.length <= 0) {
+                if (args.length <= 1) {
                     sendErrorMessage( event.getChannel(),  event.getMember());
                 } else {
                     TextChannel target =  event.getChannel();
