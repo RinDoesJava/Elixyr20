@@ -1,5 +1,16 @@
 package ElixyrMain;
 
+import Audio.MusicCommand;
+import Commands.HelpCommand;
+import Commands.SimpleCommand;
+import ElixyrMain.Command.ExecutorType;
+import Util.JSONReader;
+import Util.JSONWriter;
+import net.dv8tion.jda.core.Permission;
+import net.dv8tion.jda.core.entities.*;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -9,23 +20,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import Commands.Help;
-import Commands.SimpleCommand;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import ElixyrMain.Command.ExecutorType;
-import Commands.HelpCommand;
-import Audio.MusicCommand;
-import Util.*;
-import net.dv8tion.jda.core.Permission;
-import net.dv8tion.jda.core.entities.Guild;
-import net.dv8tion.jda.core.entities.Message;
-import net.dv8tion.jda.core.entities.MessageChannel;
-import net.dv8tion.jda.core.entities.PrivateChannel;
-import net.dv8tion.jda.core.entities.TextChannel;
-import net.dv8tion.jda.core.entities.User;
-
 public final class CommandMap {
 
     private final Main botDiscord;
@@ -33,7 +27,7 @@ public final class CommandMap {
     private final Map<Long, Integer> powers = new HashMap<>();
 
     private final Map<String, SimpleCommand> commands = new HashMap<>();
-    private final String tag = "ely;";
+    private final String tag = Info.PREFIX;
 
     public CommandMap(Main botDiscord) {
         this.botDiscord = botDiscord;

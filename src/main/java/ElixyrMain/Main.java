@@ -23,7 +23,7 @@ public class Main implements Runnable{
     private boolean running;
 
     public Main() throws LoginException, IllegalArgumentException, RateLimitedException {
-        jda = new JDABuilder(AccountType.BOT).setToken(Info.TOKEN).setGame(Game.playing("ely;help for help\n Running version" + Info.VERSION)).build();
+        jda = new JDABuilder(AccountType.BOT).setToken(Info.TOKEN).setGame(Game.playing("ely;help for help")).build();
         jda.addEventListener(new BotListener(commandMap));
         System.out.println("Bot connected.");
 
@@ -65,6 +65,9 @@ public class Main implements Runnable{
 
     public static void main(String[] args) {
         try {
+
+
+
             Main botDiscord = new Main();
             new Thread(botDiscord, "bot").start();
         } catch (LoginException | IllegalArgumentException | RateLimitedException e) {

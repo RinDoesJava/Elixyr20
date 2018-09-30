@@ -3,7 +3,10 @@ package Commands;
 import ElixyrMain.Info;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.Permission;
-import net.dv8tion.jda.core.entities.*;
+import net.dv8tion.jda.core.entities.Member;
+import net.dv8tion.jda.core.entities.Message;
+import net.dv8tion.jda.core.entities.MessageHistory;
+import net.dv8tion.jda.core.entities.TextChannel;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
@@ -22,24 +25,23 @@ public class Clear extends ListenerAdapter {
             if (args[0].equalsIgnoreCase(Info.PREFIX + "purge")) {
 
         if ( event.getMember().hasPermission(Permission.ADMINISTRATOR) || ( event.getMember().hasPermission(Permission.MESSAGE_MANAGE))) {
-                if (args.length <= 2) {
+                if (args.length <= 0) {
                     sendErrorMessage( event.getChannel(),  event.getMember());
                 } else {
-                     event.getMessage().delete().queue();
-                    TextChannel target =  event.getMessage().getMentionedChannels().get(0);
-                    purgeMessages(target, Integer.parseInt(args[2]));
+                    TextChannel target =  event.getChannel();
+                    purgeMessages(target, Integer.parseInt(args[1]));
 
-                    if (args.length > 3) {
+                    if (args.length > 2) {
                         String reason = "";
 
-                        for (int i = 3; i < args.length; i++) {
+                        for (int i = 2; i < args.length; i++) {
                             reason += args[i] + " ";
                         }
-                        log( event.getMember(), args[2], reason,  event.getChannel(), target);
+                        log( event.getMember(), args[1], reason,  event.getChannel(), target);
 
                     } else {
 
-                        log( event.getMember(), args[2], "",  event.getChannel(), target);
+                        log( event.getMember(), args[1], "",  event.getChannel(), target);
 
                     }
                 }
@@ -69,7 +71,7 @@ public class Clear extends ListenerAdapter {
         builder.setAuthor(member.getUser().getName(), member.getUser().getAvatarUrl(), member.getUser().getAvatarUrl());
         builder.setColor(Color.decode("#e84118"));
         builder.setDescription("{} = Required, [] = optional");
-        builder.addField("Proper usage: ely;purge {#channel} {num} [reason]", "", false);
+        builder.addField("Proper usage: ely;purge {num} [reason]", "", false);
         channel.sendMessage(builder.build()).complete().delete().queueAfter(15, TimeUnit.SECONDS);
     }
 
