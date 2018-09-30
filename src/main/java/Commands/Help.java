@@ -1,13 +1,8 @@
 package Commands;
 
-import ElixyrMain.Command;
-import ElixyrMain.CommandMap;
 import ElixyrMain.Info;
 import net.dv8tion.jda.core.EmbedBuilder;
-import net.dv8tion.jda.core.entities.Guild;
-import net.dv8tion.jda.core.entities.MessageChannel;
 import net.dv8tion.jda.core.entities.TextChannel;
-import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
@@ -45,6 +40,7 @@ public class Help extends ListenerAdapter {
         String Clear = "Clear a specific amount of messages!";
         String MusicHelp = "get help for the Music Commands, It's still in early development though!";
         String Ban = "Ban someone!";
+        builder.addField("ely;info", "get info about Elixyr!", false);
         builder.addField("ely;online", Online, false);
         builder.addField("ely;mute", Mute, false);
         builder.addField("ely;purge", Clear, false);
