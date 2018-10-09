@@ -25,6 +25,7 @@ public class BotInfo extends ListenerAdapter {
                 builder.addField("Bot Prefix", Info.PREFIX, false);
                 builder.addField("Number of Guilds", String.valueOf(guilds), false);
                 builder.addField("Libraries", "JDA, JDA Utils, Lavaplayer", false);
+                builder.addField("Current Host", "Selfhost on Raspberry PI", false);
                 event.getChannel().sendMessage(builder.build()).queue();
 
 

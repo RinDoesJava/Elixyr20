@@ -2,7 +2,7 @@ package Audio;
 
 import ElixyrMain.Command;
 import ElixyrMain.Command.ExecutorType;
-import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
+import com.jagrosh.jdautilities.menu.Paginator;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager;
 import com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager;
 import com.sedmelluq.discord.lavaplayer.source.AudioSourceManagers;
@@ -237,7 +237,7 @@ public class MusicCommand {
             return String.format("%d:%02d", minutes, seconds);
         }
     }
-
+    private Paginator pbuilder;
     @Command(name = "queue", description = "show the current queue!", type = ExecutorType.USER)
     private void queue(Guild guild, TextChannel channel, AudioPlaylist playlist) {
 
@@ -246,15 +246,14 @@ public class MusicCommand {
 
         String thumbnail = "https://img.youtube.com/vi/"+musicPlayer.getAudioPlayer().getPlayingTrack().getIdentifier()+"/mqdefault.jpg";
 
-        if (musicPlayer.getAudioPlayer().isPaused() || musicPlayer.getAudioPlayer().getPlayingTrack() == null) {
+        if (musicPlayer.getListener().getTrackSize() == 0) {
             builder.setTitle("ERROR");
             builder.setColor(Color.red);
-            builder.addField("Failed to load info", "Reason: Bot isn't playing anything!", false);
+            builder.addField("Failed to load info", "Reason: The queue is empty!", false);
 
 
             channel.sendMessage(builder.build()).queue();
         } else {
-
             StringBuilder trackList = new StringBuilder();
             for (AudioTrack track : manager.getPlayer(guild).getListener().getTracks()) {
                 trackList.append(track.getInfo().title).append("\n");

@@ -45,6 +45,9 @@ public class Help extends ListenerAdapter {
         builder.addField("ely;mute", Mute, false);
         builder.addField("ely;purge", Clear, false);
         builder.addField("ely;ban", Ban, false);
+        builder.addField("ely;kick", "kick a user!", false);
+        builder.addField("ely;userinfo", "Get info about a mentioned user!", false);
+        builder.addField("ely;ping", "pong!", false);
         builder.addField("ely;cutestgirl", Cutest, false);
         builder.addField("ely;invite", Invite, false);
         builder.addField("ely;musichelp", MusicHelp, false);

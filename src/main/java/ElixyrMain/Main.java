@@ -37,6 +37,9 @@ public class Main implements Runnable{
         jda.addEventListener(new Ban());
         jda.addEventListener(new Help());
         jda.addEventListener(new BotInfo());
+        jda.addEventListener(new Kick());
+        jda.addEventListener(new UserInfo());
+        jda.addEventListener(new PingPong());
     }
 
     public JDA getJda() {
