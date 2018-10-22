@@ -1,6 +1,9 @@
 package ElixyrMain;
 
 import Commands.*;
+import Images.Danbooru;
+import Images.Search;
+import Images.e621;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
@@ -39,7 +42,11 @@ public class Main implements Runnable{
         jda.addEventListener(new BotInfo());
         jda.addEventListener(new Kick());
         jda.addEventListener(new UserInfo());
-        jda.addEventListener(new PingPong());
+        jda.addEventListener(new Say());
+        jda.addEventListener(new Search());
+        jda.addEventListener(new e621());
+        jda.addEventListener(new Danbooru());
+        jda.addEventListener(new Images());
     }
 
     public JDA getJda() {
