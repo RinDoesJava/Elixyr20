@@ -27,7 +27,7 @@ public class Danbooru extends ListenerAdapter {
                     event.getChannel().sendMessage(builder.build()).queue();
                 } else {
 
-                    String search = event.getMessage().getContentRaw().replaceFirst("dev;danbooru", "");
+                    String search = event.getMessage().getContentRaw().replaceFirst("ely;danbooru", "");
 
                     BoardImage image = DefaultImageBoards.DANBOORU.search(search).blocking().get(0);
 

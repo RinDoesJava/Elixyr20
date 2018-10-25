@@ -1,3 +1,5 @@
 Manifest-Version: 1.0
+Class-Path: C:\Users\Agando\IdeaProjects\Elixyr20\src\main\java\Elixyr
+ Main
 Main-Class: ElixyrMain.Main
 

@@ -27,7 +27,7 @@ public class e621 extends ListenerAdapter {
                     event.getChannel().sendMessage(builder.build()).queue();
                 } else {
 
-                    String search = event.getMessage().getContentRaw().replaceFirst("dev;e621", "");
+                    String search = event.getMessage().getContentRaw().replaceFirst("ely;e621", "");
 
                     BoardImage image = DefaultImageBoards.E621.search(search).blocking().get(0);
 

@@ -26,8 +26,7 @@ public class Search extends ListenerAdapter {
                     builder.addField("Reason", "This channel is not NSFW!", false);
                     event.getChannel().sendMessage(builder.build()).queue();
                 } else {
-
-                    String search = event.getMessage().getContentRaw().replaceFirst("dev;rule34", "");
+                    String search = event.getMessage().getContentRaw().replaceFirst("ely;rule34", "");
 
                     BoardImage image = DefaultImageBoards.RULE34.search(search).blocking().get(0);
 
