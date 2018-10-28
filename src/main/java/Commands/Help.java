@@ -41,6 +41,7 @@ public class Help extends ListenerAdapter {
         String MusicHelp = "get help for the Music Commands, It's still in early development though!";
         String Ban = "Ban someone!";
         builder.addField("ely;info", "get info about Elixyr!", false);
+        builder.addField("ely;dm", "DM someone using Elixyr!", false);
         builder.addField("ely;online", Online, false);
         builder.addField("ely;mute", Mute, false);
         builder.addField("ely;purge", Clear, false);

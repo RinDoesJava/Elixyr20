@@ -47,6 +47,7 @@ public class Main implements Runnable{
         jda.addEventListener(new e621());
         jda.addEventListener(new Danbooru());
         jda.addEventListener(new Images());
+        jda.addEventListener(new DmMe());
     }
 
     public JDA getJda() {

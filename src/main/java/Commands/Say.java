@@ -18,12 +18,12 @@ public class Say extends ListenerAdapter {
             if (!event.getMember().getUser().isBot()) {
 
                 Member info = event.getMember();
-                String message = event.getMessage().getContentRaw().replace("dev;quote ", "");
+                String message = event.getMessage().getContentRaw().replace("ely;quote ", "");
                 String pfp = info.getUser().getAvatarUrl().toLowerCase();
                 String realname = event.getMember().getEffectiveName() + "#" + info.getUser().getDiscriminator();
 
                 EmbedBuilder builder = new EmbedBuilder();
-                builder.setAuthor(realname, pfp, pfp);
+                builder.setAuthor(realname);
                 builder.setColor(Color.cyan);
                 builder.addField("Quoted Message:", message, false);
                 builder.setFooter("Quoted from " + realname, pfp);
